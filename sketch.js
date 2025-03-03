@@ -3,9 +3,7 @@ let diaChange1 = 0.1;
 let dia2 = 5;
 let diaChange2 = 0.05;
 let angle = 0;
-let rotationChange;
-let a = 50;
-let aChange = 0.5;
+let rotationChange = 0.5;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
@@ -25,14 +23,14 @@ function draw() {
 
   circle(x - offset, y - offset, dia1);
   circle(x + offset, y + offset, dia1);
-  if (dia1 < 10 || dia1 > unit) {
+  if (dia1 < 10 || dia1 > unit / 2) {
     diaChange1 *= -1;
   }
   dia1 -= diaChange1;
 
   push();
   translate(x - offset, y + offset);
-  stroke(255, 160, 115, a);
+  stroke(255, 160, 115, 150);
   strokeWeight(5);
   rotate(angle);
   cross(0, 0, dia2);
@@ -40,20 +38,18 @@ function draw() {
 
   push();
   translate(x + offset, y - offset);
-  stroke(255, 160, 115, a);
+  stroke(255, 160, 115, 150);
   strokeWeight(5);
   rotate(angle);
   cross(0, 0, dia2);
   pop();
 
-  if (dia2 < 1 || dia2 > unit / 2) {
+  if (dia2 < 1 || dia2 > offset) {
     diaChange2 *= -1;
     rotationChange *= -1;
-    aChange *= -1;
   }
   dia2 += diaChange2;
   angle += rotationChange;
-  a += aChange;
 }
 
 function windowResized() {
