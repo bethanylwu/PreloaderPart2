@@ -3,7 +3,7 @@ let diaChange1 = 0.1;
 let dia2 = 5;
 let diaChange2 = 0.05;
 let angle = 0;
-let rotationChange = 1;
+let rotationChange;
 let a = 50;
 let aChange = 0.5;
 
@@ -54,8 +54,6 @@ function draw() {
   dia2 += diaChange2;
   angle += rotationChange;
   a += aChange;
-
-  console.log(a);
 }
 
 function windowResized() {
