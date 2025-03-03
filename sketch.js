@@ -19,8 +19,6 @@ function draw() {
 
   let x = width / 2;
   let y = height / 2;
-  let dia = 50;
-  let radius = dia / 2;
   noFill();
   stroke(0, 65, 110, 150);
   strokeWeight(5);
@@ -33,7 +31,7 @@ function draw() {
   dia1 -= diaChange1;
 
   push();
-  translate(x, y + radius * 1.5);
+  translate(x - offset, y + offset);
   stroke(255, 160, 115, a);
   strokeWeight(5);
   rotate(angle);
@@ -41,7 +39,7 @@ function draw() {
   pop();
 
   push();
-  translate(x + radius * 1.5, y);
+  translate(x + offset, y - offset);
   stroke(255, 160, 115, a);
   strokeWeight(5);
   rotate(angle);
