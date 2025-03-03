@@ -25,7 +25,7 @@ function draw() {
 
   circle(x - offset, y - offset, dia1);
   circle(x + offset, y + offset, dia1);
-  if (dia1 < 10 || dia1 > 60) {
+  if (dia1 < 10 || dia1 > unit) {
     diaChange1 *= -1;
   }
   dia1 -= diaChange1;
@@ -46,7 +46,7 @@ function draw() {
   cross(0, 0, dia2);
   pop();
 
-  if (dia2 < 1 || dia2 > 20) {
+  if (dia2 < 1 || dia2 > unit / 2) {
     diaChange2 *= -1;
     rotationChange *= -1;
     aChange *= -1;
