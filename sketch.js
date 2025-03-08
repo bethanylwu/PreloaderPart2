@@ -22,28 +22,10 @@ function draw() {
   drawCircle(x + offset, y + offset, dia1);
   updateDia1();
 
-  push();
-  translate(x - offset, y + offset);
-  stroke(255, 160, 115, 150);
-  strokeWeight(5);
-  rotate(angle);
-  cross(0, 0, dia2);
-  pop();
+  drawCross(x - offset, y + offset, dia2);
+  drawCross(x + offset, y - offset, dia2);
+  updateDia2andAngle();
 
-  push();
-  translate(x + offset, y - offset);
-  stroke(255, 160, 115, 150);
-  strokeWeight(5);
-  rotate(angle);
-  cross(0, 0, dia2);
-  pop();
-
-  if (dia2 < 1 || dia2 > offset) {
-    diaChange2 *= -1;
-    rotationChange *= -1;
-  }
-  dia2 += diaChange2;
-  angle += rotationChange;
 }
 
 function windowResized() {
@@ -63,6 +45,25 @@ function updateDia1() {
     diaChange1 *= -1;
   }
   dia1 -= diaChange1;
+}
+
+function drawCross(x, y, dia) {
+  push();
+  translate(x, y);
+  stroke(255, 160, 115, 150);
+  strokeWeight(5);
+  rotate(angle);
+  cross(0, 0, dia);
+  pop();
+}
+
+function updateDia2andAngle() {
+  if (dia2 < 1 || dia2 > offset) {
+    diaChange2 *= -1;
+    rotationChange *= -1;
+  }
+  dia2 += diaChange2;
+  angle += rotationChange;
 }
 
 function cross(crossX, crossY, scale) {
