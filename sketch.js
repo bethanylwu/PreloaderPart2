@@ -17,16 +17,10 @@ function draw() {
 
   let x = width / 2;
   let y = height / 2;
-  noFill();
-  stroke(0, 65, 110, 150);
-  strokeWeight(5);
 
-  circle(x - offset, y - offset, dia1);
-  circle(x + offset, y + offset, dia1);
-  if (dia1 < 10 || dia1 > unit / 2) {
-    diaChange1 *= -1;
-  }
-  dia1 -= diaChange1;
+  drawCircle(x - offset, y - offset, dia1);
+  drawCircle(x + offset, y + offset, dia1);
+  updateDia1();
 
   push();
   translate(x - offset, y + offset);
@@ -54,6 +48,21 @@ function draw() {
 
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
+}
+
+function drawCircle(x, y, dia) {
+  noFill();
+  stroke(0, 65, 110, 150);
+  strokeWeight(5);
+
+  circle(x, y, dia)
+}
+
+function updateDia1() {
+  if (dia1 < 10 || dia1 > unit / 2) {
+    diaChange1 *= -1;
+  }
+  dia1 -= diaChange1;
 }
 
 function cross(crossX, crossY, scale) {
