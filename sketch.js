@@ -29,13 +29,18 @@ function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
 }
 
+
 function drawCircles(_x, _y) {
+  drawCircle(_x - offset, _y - offset, dia1);
+  drawCircle(_x + offset, _y + offset, dia1);
+}
+
+function drawCircle(_x, _y, dia) {
   noFill();
   stroke(0, 65, 110, 150);
   strokeWeight(5);
 
-  circle(_x - offset, _y - offset, dia1);
-  circle(_x + offset, _y + offset, dia1);
+  circle(_x, _y, dia);
 }
 
 function updateDia1() {
