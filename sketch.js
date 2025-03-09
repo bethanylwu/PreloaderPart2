@@ -18,8 +18,7 @@ function draw() {
   let x = width / 2;
   let y = height / 2;
 
-  drawCircle(x - offset, y - offset, dia1);
-  drawCircle(x + offset, y + offset, dia1);
+  drawCircles(x, y);
   updateDia1();
 
   drawCross(x - offset, y + offset, dia2);
@@ -31,12 +30,13 @@ function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
 }
 
-function drawCircle(x, y, dia) {
+function drawCircles(_x, _y) {
   noFill();
   stroke(0, 65, 110, 150);
   strokeWeight(5);
 
-  circle(x, y, dia)
+  circle(_x - offset, _y - offset, dia1);
+  circle(_x + offset, _y + offset, dia1);
 }
 
 function updateDia1() {
