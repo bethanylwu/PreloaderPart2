@@ -21,8 +21,7 @@ function draw() {
   drawCircles(x, y);
   updateDia1();
 
-  drawCross(x - offset, y + offset, dia2);
-  drawCross(x + offset, y - offset, dia2);
+  drawCrosses(x, y);
   updateDia2andAngle();
 }
 
@@ -44,6 +43,11 @@ function updateDia1() {
     diaChange1 *= -1;
   }
   dia1 -= diaChange1;
+}
+
+function drawCrosses(_x, _y) {
+  drawCross(_x - offset, _y + offset, dia2);
+  drawCross(_x + offset, _y - offset, dia2);
 }
 
 function drawCross(x, y, dia) {
