@@ -25,7 +25,6 @@ function draw() {
   drawCross(x - offset, y + offset, dia2);
   drawCross(x + offset, y - offset, dia2);
   updateDia2andAngle();
-
 }
 
 function windowResized() {
