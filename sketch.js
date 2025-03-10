@@ -15,8 +15,11 @@ function draw() {
   unit = min(width / 10, height / 10);
   offset = unit / 4;
 
-  let x = width / 2;
-  let y = height / 2;
+  // let x = width / 2;
+  // let y = height / 2;
+
+  let x = mouseX;
+  let y = mouseY;
 
   drawCircles(x, y);
   updateDia1();
