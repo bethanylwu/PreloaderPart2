@@ -11,7 +11,7 @@ function setup() {
 }
 
 function draw() {
-  background(220);
+  background(220, 10);
   unit = min(width / 10, height / 10);
   offset = unit / 4;
 
