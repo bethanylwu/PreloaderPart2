@@ -8,6 +8,9 @@ let rotationChange = 0.5;
 function setup() {
   createCanvas(windowWidth, windowHeight);
   angleMode(DEGREES);
+  let x = width / 2;
+  let y = height / 2;
+
 }
 
 function draw() {
@@ -17,9 +20,13 @@ function draw() {
 
   // let x = width / 2;
   // let y = height / 2;
-
-  let x = mouseX;
-  let y = mouseY;
+  if (mouseX > 0 && mouseX < width && mouseY > 0 && mouseY < height) {
+    x = mouseX;
+    y = mouseY;
+  } else {
+    x = width / 2;
+    y = height / 2;
+  }
 
   drawCircles(x, y);
   updateDia1();
